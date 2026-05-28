@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Shield } from 'lucide-react';
 import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
@@ -9,6 +9,8 @@ import { validateLoginForm } from '../../utils/validation';
 
 export default function LoginPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectMessage = location.state?.message;
   const [form, setForm] = useState({ username: '', password: '' });
   const [rememberMe, setRememberMe] = useState(false);
   const [errors, setErrors] = useState({});
@@ -62,6 +64,12 @@ export default function LoginPage() {
 
           <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">Welcome back</h1>
           <p className="mt-2 text-sm text-gray-500">Sign in to manage your policies and claims.</p>
+
+          {redirectMessage && (
+            <p className="mt-4 rounded-xl border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-blue-800">
+              {redirectMessage}
+            </p>
+          )}
 
           <form onSubmit={handleSubmit} className="mt-8 space-y-5" noValidate>
             <Input

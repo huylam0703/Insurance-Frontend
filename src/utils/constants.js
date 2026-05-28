@@ -37,4 +37,11 @@ export const STATUS_BADGE_VARIANTS = {
   [CLAIM_STATUSES.APPROVED]: 'emerald',
   [CLAIM_STATUSES.PAID]: 'green',
   [CLAIM_STATUSES.REJECTED]: 'red',
+  ACTIVE: 'emerald',
+  INACTIVE: 'gray',
+  UNKNOWN: 'gray',
 };
+
+export const POLICY_TYPES = ['HEALTH', 'LIFE', 'VEHICLE', 'TRAVEL'];
+
+export const POLICY_STATUSES = ['ACTIVE', 'INACTIVE'];

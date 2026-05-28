@@ -5,6 +5,7 @@ import LoginPage from '../pages/auth/LoginPage';
 import RegisterPage from '../pages/auth/RegisterPage';
 import Dashboard from '../pages/admin/Dashboard';
 import PlaceholderPage from '../pages/admin/PlaceholderPage';
+import PoliciesPage from '../pages/admin/PoliciesPage';
 import HomePage from '../pages/public/HomePage';
 import ProtectedRoute from './ProtectedRoute';
 
@@ -29,15 +30,7 @@ export default function AppRoutes() {
         }
       >
         <Route index element={<Dashboard />} />
-        <Route
-          path="policies"
-          element={
-            <PlaceholderPage
-              title="Policies"
-              description="Manage insurance policies, coverage tiers, and renewals."
-            />
-          }
-        />
+        <Route path="policies" element={<PoliciesPage />} />
         <Route
           path="contracts"
           element={
